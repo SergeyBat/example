@@ -1,0 +1,94 @@
+@import '../../../../../styles/variables';
+@import '../../../../../styles/media';
+
+.middle-bottom-card-block {
+  width: 100%;
+
+  &__bottom-line {
+    display: flex;
+    width: 100%;
+    height: 2px;
+    background-color: $jagged_ice;
+    box-shadow: 0.6px 0.8px 0 0 rgba($black-color, 0.04);
+    margin-top: 27px;
+
+    @include mediaMinMax(1025, $normal) {
+      height: vw-full(2);
+      margin-top: vw-full(27);
+    }
+
+    @include media($small) {
+      display: none;
+    }
+  }
+
+  &__bottom-info {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 28px;
+
+    @include mediaMinMax(1025, $normal) {
+      margin-top: vw-full(28);
+    }
+
+    @include mediaMinMax(481, $small) {
+      margin-top: vw-mobile(21);
+    }
+
+    @include media($mini) {
+      margin-top: 21px;
+    }
+  }
+
+  &__bottom-title {
+    font-size: 17px;
+    font-weight: $semiBold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 15px;
+    letter-spacing: normal;
+    color: $ebony-clay-gray-color;
+
+    @include mediaMinMax(1025, $normal) {
+      font-size: vw-full(17);
+      line-height: vw-full(15);
+    }
+
+    @include mediaMinMax(481, $small) {
+      font-size: vw-mobile(14.5);
+      line-height: vw-mobile(15);
+    }
+
+    @include media($mini) {
+      font-size: 14.5px;
+      line-height: 15px;
+    }
+  }
+
+  &__bottom-price,
+  &__bottom-discount {
+    font-size: 17px !important;
+    line-height: 18px !important;
+    margin: 0 0 0 10px !important;
+
+    @include mediaMinMax(1025, $normal) {
+      font-size: vw-full(17) !important;
+      line-height: vw-full(18) !important;
+      margin: 0 0 0 vw-full(10) !important;
+    }
+
+    @include mediaMinMax(481, $small) {
+      font-size: vw-mobile(15.5) !important;
+      line-height: vw-mobile(16) !important;
+      margin: 0 0 0 vw-mobile(10) !important;
+    }
+
+    @include media($mini) {
+      font-size: 15.5px !important;
+      line-height: 16px !important;
+      margin: 0 0 0 10px !important;
+    }
+  }
+}

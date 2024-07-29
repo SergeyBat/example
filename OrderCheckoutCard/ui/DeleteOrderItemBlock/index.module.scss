@@ -1,0 +1,54 @@
+@import 'src/styles/variables';
+@import 'src/styles/media';
+
+.delete-order-item-block {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  width: 11px;
+  height: 11px;
+  cursor: pointer;
+
+  &:after {
+    content: '';
+    display: block;
+    width: 14px;
+    height: 2px;
+    background-color: $horizon;
+    transform: rotate(45deg);
+    position: absolute;
+  }
+
+  &:before {
+    content: '';
+    display: block;
+    width: 14px;
+    height: 2px;
+    background-color: $horizon;
+    transform: rotate(135deg);
+    position: absolute;
+  }
+
+  @include mediaMinMax(1025, $normal) {
+    width: vw-full(11);
+    height: vw-full(11);
+
+    &:after,
+    &:before {
+      width: vw-full(14);
+      height: vw-full(2);
+    }
+  }
+
+  @include mediaMinMax(481, $small) {
+    width: vw-mobile(11);
+    height: vw-mobile(11);
+
+    &:after,
+    &:before {
+      width: vw-mobile(14);
+      height: vw-mobile(2);
+    }
+  }
+}

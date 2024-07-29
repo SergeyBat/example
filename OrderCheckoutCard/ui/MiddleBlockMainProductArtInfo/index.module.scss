@@ -1,0 +1,50 @@
+@import '../../../../../styles/variables';
+@import '../../../../../styles/media';
+
+.middle-block-main-product-art-info {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 21px;
+  gap: 10px;
+  color: $main-gray-color;
+
+  @include mediaMinMax(1025, $normal) {
+    margin-top: vw-full(21);
+    gap: vw-full(10);
+  }
+
+  @include mediaMinMax(481, $small) {
+    margin-top: vw-mobile(17);
+    gap: vw-mobile(5);
+  }
+
+  @include media($mini) {
+    margin-top: 17px;
+    gap: 5px;
+  }
+
+  &__size,
+  &__color,
+  &__personalize,
+  &__display {
+    font-size: 14.5px;
+    line-height: 15px;
+
+    @include mediaMinMax(1025, $normal) {
+      font-size: vw-full(14.5);
+      line-height: vw-full(15);
+    }
+
+    @include mediaMinMax(481, $small) {
+      font-size: vw-mobile(11.5);
+      line-height: vw-mobile(12);
+    }
+
+    @include media($mini) {
+      font-size: 11.5px;
+      line-height: 12px;
+    }
+  }
+
+}

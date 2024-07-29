@@ -1,0 +1,119 @@
+@import '../../../../../styles/variables';
+@import '../../../../../styles/media';
+
+.middle-block-main-product-info {
+  width: 100%;
+
+  &__product-name {
+    font-size: 17px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 15px;
+    letter-spacing: normal;
+    text-align: left;
+    color: $ebony-clay-gray-color;
+
+    @include mediaMinMax(1025, $normal) {
+      font-size: vw-full(17);
+      line-height: vw-full(15);
+    }
+
+    @include mediaMinMax(481, $small) {
+      font-size: vw-mobile(14.5);
+      line-height: vw-mobile(15);
+    }
+
+    @include media($mini) {
+      font-size: 14.5px;
+      line-height: 15px;
+    }
+  }
+
+  &__product-prices {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    margin: 9px 0 0 0;
+
+    @include mediaMinMax(1025, $normal) {
+      margin: vw-full(9) 0 0 0;
+    }
+
+
+    @include mediaMinMax(481, $small) {
+      margin: vw-mobile(6) 0 0 0;
+    }
+
+    @include media($mini) {
+      margin: 6px 0 0 0;
+    }
+  }
+
+  &__price-values {
+    margin: 0 !important;
+
+    @include mediaMinMax(1025, $normal) {
+      margin: 0 !important;
+    }
+  }
+
+  &__price,
+  &__discount {
+    font-size: 17px !important;
+    font-weight: normal !important;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 18px !important;
+    letter-spacing: normal;
+    color: $horizon !important;
+    height: 18px !important;
+    margin: 0 !important;
+
+    @include mediaMinMax(1025, $normal) {
+      font-size: vw-full(17) !important;
+      line-height: vw-full(18) !important;
+      height: vw-full(18) !important;
+    }
+
+    @include mediaMinMax(481, $small) {
+      font-size: vw-mobile(13.5) !important;
+      line-height: vw-mobile(14) !important;
+      height: vw-mobile(14) !important;
+    }
+
+    @include media($mini) {
+      font-size: 13.5px !important;
+      line-height: 14px !important;
+      height: 14px !important;
+    }
+  }
+
+  &__discount {
+    margin-left: 9px !important;
+
+    @include mediaMinMax(1025, $normal) {
+      margin-left: vw-full(9) !important;
+    }
+  }
+
+  &__product-right-price {
+    font-size: 17px !important;
+    font-weight: normal !important;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 18px !important;
+    letter-spacing: normal;
+    color: $ebony-clay-gray-color;
+
+    @include mediaMinMax(1025, $normal) {
+      font-size: vw-full(17) !important;
+      line-height: vw-full(18) !important;
+    }
+
+    @include media($small) {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,138 @@
+@import 'src/styles/variables.scss';
+@import 'src/styles/media.scss';
+
+.order-checkout-example-two-card {
+  margin-bottom: 40px;
+  order: 3;
+
+  @include mediaMinMax(1025, $normal) {
+    margin-bottom: vw-full(40);
+  }
+
+  @include media($small) {
+    margin-bottom: 0;
+  }
+
+  &__wrap {
+    width: 955px;
+    padding: 42px 28px 41px 64px;
+    box-shadow: 3.8px 4.7px 24px 8px rgba($black-color, 0.02);
+    border: solid 1px $jagged_ice;
+    grid-template-columns: 170px 1fr 35px;
+    grid-template-areas:
+      'leftCardSide cardTitleBlock deleteOrderItemBlock'
+      'leftCardSide middle .'
+    ;
+    grid-row-gap: 40px;
+    background-color: $white-color;
+    display: grid;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    @include mediaMinMax(1025, $normal) {
+      width: vw-full(955);
+      padding: vw-full(42) vw-full(28) vw-full(41) vw-full(64);
+      grid-template-columns: vw-full(170) 1fr vw-full(35);
+      grid-row-gap: vw-full(40);
+    }
+
+    @include media($small) {
+      background-color: initial;
+      box-shadow: none;
+      border: initial;
+      border-bottom: solid 1px $jagged_ice;
+      width: auto;
+      grid-template-rows: auto auto 1fr;
+      grid-template-areas:
+        "cardTitleBlock cardTitleBlock deleteOrderItemBlock"
+        "leftCardSide middle ."
+        "btnEdit middle ."
+      ;
+    }
+
+    @include mediaMinMax(481, $small) {
+      grid-template-columns: vw-mobile(130) 1fr vw-mobile(15);
+      grid-row-gap: vw-mobile(15);
+      padding: vw-mobile(25) 0 ;
+      margin: 0 vw-mobile(25);
+    }
+
+    @include media($mini) {
+      grid-template-columns: 130px 1fr 15px;
+      grid-row-gap: 15px;
+      padding: 25px 0;
+      margin: 0 25px;
+    }
+
+
+  }
+
+  &__left-card-side {
+    grid-area: leftCardSide;
+
+    @include mediaMinMax(481, $small) {
+      margin-top: vw-mobile(5);
+    }
+
+    @include media($mini) {
+      margin-top: 5px;
+    }
+  }
+
+  &__card-title-block {
+    grid-area: cardTitleBlock;
+  }
+
+  &__middle {
+    grid-area: middle;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 648px;
+
+    @include mediaMinMax(1025, $normal) {
+      width: vw-full(648);
+    }
+
+    @include media($small) {
+      width: initial;
+    }
+
+    @include mediaMinMax(481, $small) {
+      margin-top: vw-mobile(5);
+    }
+
+    @include media($mini) {
+      margin-top: 5px;
+    }
+  }
+
+  &__main-option {
+    width: 100%;
+
+    &:nth-child(2) {
+      margin-bottom: 19px;
+
+      @include mediaMinMax(1025, $normal) {
+        margin-bottom: vw-full(19);
+      }
+    }
+  }
+
+  &__delete-order-item-block {
+    grid-area: deleteOrderItemBlock;
+    justify-self: flex-end;
+    align-self: center;
+  }
+
+  &__btn-edit {
+    grid-area: btnEdit;
+    display: none;
+
+    @include media($small) {
+      display: block;
+      justify-self: flex-start;
+    }
+  }
+}

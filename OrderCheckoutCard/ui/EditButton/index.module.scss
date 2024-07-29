@@ -1,0 +1,31 @@
+@import 'src/styles/variables';
+@import 'src/styles/media';
+
+.edit-button {
+  background: none;
+  border: none;
+  outline: none;
+  text-decoration: underline;
+  font-size: 21px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 19px;
+  letter-spacing: normal;
+  color: $horizon;
+
+  @include mediaMinMax(1025, $normal) {
+    font-size: vw-full(21);
+    line-height: vw-full(19);
+  }
+
+  @include mediaMinMax(481, $small) {
+    font-size: vw-mobile(15);
+    line-height: vw-mobile(16);
+  }
+
+  @include media($mini) {
+    font-size: 15px;
+    line-height: 16px;
+  }
+}

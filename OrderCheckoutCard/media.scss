@@ -1,0 +1,71 @@
+$mini: 480;
+$xmini: 580;
+$xlmini: 680;
+$xsmall: 768;
+$small: 1024;
+$xnormal: 1366;
+$xlnormal: 1530;
+$normal: 1920;
+
+
+@mixin media($width) {
+  @media screen and (max-width: #{$width}px) {
+    @content;
+  }
+}
+
+@mixin mediaMin($width) {
+  @media screen and (min-width: #{$width}px) {
+    @content;
+  }
+}
+
+@mixin mediaMinMax($minWidth, $maxWidth) {
+  @media screen and (min-width: #{$minWidth}px) and (max-width: #{$maxWidth}px) {
+    @content;
+  }
+}
+
+@mixin mediaMinMaxSquare($minWidth, $maxWidth) {
+  @media screen and (min-width: #{$minWidth}px) and (max-width: #{$maxWidth}px) and (max-aspect-ratio: 16/9) and (min-aspect-ratio: 4/3){
+    @content;
+  }
+}
+
+@mixin mediaMinMaxWithHeight($minWidth, $maxWidth, $minHeight: 700, $maxHeight: 1080) {
+  @media screen and (min-width: #{$minWidth}px) and (max-width: #{$maxWidth}px), screen and (min-height: #{$minHeight}px) and (max-height: #{$maxHeight}px) {
+    @content;
+  }
+}
+
+@function vw-full($px, $base-vw: 1920, $base-vh: 1080) {
+  @if $px < 0 {
+    @return #{max(#{($px * 100) / $base-vw}vw, #{($px * 100) / $base-vh}vh)};
+  } @else {
+    @return #{min(#{($px * 100) / $base-vw}vw, #{($px * 100) / $base-vh}vh)};
+  }
+}
+
+@function vw-tablet($px-vw, $base-vw: 768) {
+  @return #{(($px-vw * 100) / $base-vw)}vw
+}
+
+@function vw-mobile($px-vw, $base-vw: 480) {
+  @return #{(($px-vw * 100) / $base-vw)}vw
+}
+
+@function to-rem($px) {
+  @return #{1 / 16 * $px}rem
+}
+
+@mixin content-wrapper {
+  width: 1544px;
+
+  @include mediaMinMax(1025, $normal) {
+    width: vw-full(1544);
+  }
+
+  @include media($small) {
+    width: 100vw;
+  }
+}
